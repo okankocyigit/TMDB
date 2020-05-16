@@ -608,6 +608,7 @@ extension TMDB {
                 _parameters[Constants.Parameters.startDate] = params.startDate
                 _parameters[Constants.Parameters.endDate] = params.endDate
             case .getDiscoverMovies(let params):
+                _parameters[Constants.Parameters.page] = params.page
                 _parameters = _parameters.merging(params.parameters.toDictionary(), uniquingKeysWith: { (current, _) in current })
             case .getTVAccountStates(let params):
                 if let sessionId = params.sessionId {

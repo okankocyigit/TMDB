@@ -6,6 +6,7 @@ public enum TMDBTVSortByParameter: String, TMDBSortByParameter {
 
 public class TMDBDiscoverTVParameters: Encodable {
 
+    public init() {}
     public var sortBy: TMDBSortBy<TMDBTVSortByParameter>?
     public var airDateGte: Date?
     public var airDateLte: Date?
