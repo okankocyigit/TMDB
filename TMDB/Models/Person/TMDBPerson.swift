@@ -1,5 +1,5 @@
 public struct TMDBPerson: Codable {
-    public let knownForDepartment: String
+    public let knownForDepartment: String?
     public let adult: Bool
     public let id: Int
     public let profilePath: String?

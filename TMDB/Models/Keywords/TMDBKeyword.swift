@@ -1,5 +1,5 @@
 public struct TMDBKeywords: Codable {
-    public let id: Int
+    public let id: Int?
     public let keywords: [TMDBKeyword]
 }
 

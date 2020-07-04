@@ -1,12 +1,12 @@
 public struct TMDBTaggedImage: Codable {
     public let media: TMDBTaggedImageMedia
     public let image: TMDBImage
-    public let mediaType: MediaType
+    public let mediaType: TMDBTaggedImageMediaType
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let singleContainer = try decoder.singleValueContainer()
-        mediaType = try container.decode(MediaType.self, forKey: .mediaType)
+        mediaType = try container.decode(TMDBTaggedImageMediaType.self, forKey: .mediaType)
         image = try singleContainer.decode(TMDBImage.self)
         switch mediaType {
         case .movie:
@@ -16,20 +16,18 @@ public struct TMDBTaggedImage: Codable {
         }
     }
     
-    public func encode(to encoder: Encoder) throws {
-
-    }
-    
-    public enum MediaType: String, Codable {
-        case movie, tv
-    }
-    
+    public func encode(to encoder: Encoder) throws { }
+        
     public enum CodingKeys: String, CodingKey {
         case mediaType = "media_type", media = "media"
     }
-    
-    public enum TMDBTaggedImageMedia {
-        case movie(media: TMDBMovie)
-        case tv(media: TMDBTV)
-    }
+}
+
+public enum TMDBTaggedImageMedia {
+    case movie(media: TMDBMovie)
+    case tv(media: TMDBTV)
+}
+
+public enum TMDBTaggedImageMediaType: String, Codable {
+    case movie, tv
 }

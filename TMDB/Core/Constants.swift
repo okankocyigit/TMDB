@@ -37,6 +37,7 @@ extension TMDB {
             static let confirm = "confirm"
             static let guestSessionId = "guest_session_id"
             static let value = "value"
+            static let appendToResponse = "append_to_response"
         }
         
         enum HttpHeaderField: String {

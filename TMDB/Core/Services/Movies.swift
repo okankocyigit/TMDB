@@ -1,7 +1,7 @@
 extension TMDB {
     public class Movies {
-        public class func get(id: Int, completion: @escaping (Result<TMDBMovie, Error>) -> Void) -> URLSessionTask? {
-            return request(with: .getMovieDetail(id: id), completion: completion)
+        public class func get(id: Int, appendToResponse: [TMDBMovieDetailExtraResponses] = [], includeImageLanguage: String? = nil, page: Int = 1, completion: @escaping (Result<TMDBMovieDetail, Error>) -> Void) -> URLSessionTask? {
+            return request(with: .getMovieDetail(id: id, appendToResponse: appendToResponse, includeImageLanguage: includeImageLanguage, page: page), completion: completion)
         }
         
         public class func getAlternativeTitles(id: Int, country: String? = nil, completion: @escaping (Result<TMDBAlternativeTitles, Error>) -> Void) -> URLSessionTask? {
@@ -60,7 +60,7 @@ extension TMDB {
             return request(with: .deleteMovieRating(id: id, guestSessionId: guestSessionId, sessionId: sessionId), completion: completion)
         }
         
-        public class func getLatest(completion: @escaping (Result<TMDBMovie, Error>) -> Void) -> URLSessionTask? {
+        public class func getLatest(completion: @escaping (Result<TMDBMovieDetail, Error>) -> Void) -> URLSessionTask? {
             return request(with: .getMovieLatest, completion: completion)
         }
         

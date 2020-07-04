@@ -6,12 +6,12 @@ public struct TMDBPersonCredits: Codable {
 
 public struct TMDBPersonCreditCast: Codable {
     public let media: TMDBPersonCreditCastMedia
-    public let mediaType: MediaType
+    public let mediaType: TMDBPersonCreditCastMediaType
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let singleContainer = try decoder.singleValueContainer()
-        mediaType = try container.decode(MediaType.self, forKey: .mediaType)
+        mediaType = try container.decode(TMDBPersonCreditCastMediaType.self, forKey: .mediaType)
         
         switch mediaType {
         case .movie:
@@ -24,26 +24,25 @@ public struct TMDBPersonCreditCast: Codable {
     public enum CodingKeys: String, CodingKey {
         case mediaType = "media_type"
     }
-    
-    public enum TMDBPersonCreditCastMedia {
-        case movie(credit: TMDBPersonMovieCreditsCast)
-        case tv(credit: TMDBPersonTVCreditsCast)
-    }
-    
-    public enum MediaType: String, Codable {
-        case movie, tv
-    }
-    
+}
+
+public enum TMDBPersonCreditCastMedia {
+    case movie(credit: TMDBPersonMovieCreditsCast)
+    case tv(credit: TMDBPersonTVCreditsCast)
+}
+
+public enum TMDBPersonCreditCastMediaType: String, Codable {
+    case movie, tv
 }
 
 public struct TMDBPersonCreditCrew: Codable {
     public let media: TMDBPersonCreditCrewMedia
-    public let mediaType: MediaType
+    public let mediaType: TMDBPersonCreditCrewMediaType
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let singleContainer = try decoder.singleValueContainer()
-        mediaType = try container.decode(MediaType.self, forKey: .mediaType)
+        mediaType = try container.decode(TMDBPersonCreditCrewMediaType.self, forKey: .mediaType)
         
         switch mediaType {
         case .movie:
@@ -56,14 +55,13 @@ public struct TMDBPersonCreditCrew: Codable {
     public enum CodingKeys: String, CodingKey {
         case mediaType = "media_type"
     }
-    
-    public enum TMDBPersonCreditCrewMedia {
-        case movie(credit: TMDBPersonMovieCreditsCrew)
-        case tv(credit: TMDBPersonTVCreditsCrew)
-    }
-    
-    public enum MediaType: String, Codable {
-        case movie, tv
-    }
-    
+}
+
+public enum TMDBPersonCreditCrewMedia {
+    case movie(credit: TMDBPersonMovieCreditsCrew)
+    case tv(credit: TMDBPersonTVCreditsCrew)
+}
+
+public enum TMDBPersonCreditCrewMediaType: String, Codable {
+    case movie, tv
 }

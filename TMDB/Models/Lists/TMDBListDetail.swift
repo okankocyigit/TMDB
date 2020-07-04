@@ -17,36 +17,35 @@ public struct TMDBListDetail: Codable {
         case name
         case posterPath = "poster_path"
     }
+}
+
+public struct TMDBListItem: Codable {
+    public let media: TMDBListItemMedia
+    public let mediaType: TMDBListItemMediaType
     
-    public struct TMDBListItem: Codable {
-        public let media: TMDBSearchResultMedia
-        public let mediaType: MediaType
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let singleContainer = try decoder.singleValueContainer()
+        mediaType = try container.decode(TMDBListItemMediaType.self, forKey: .mediaType)
         
-        public enum TMDBSearchResultMedia {
-            case tv(media: TMDBTV)
-            case movie(media: TMDBMovie)
+        switch mediaType {
+        case .movie:
+            media = .movie(media: try singleContainer.decode(TMDBMovie.self))
+        case .tv:
+            media = .tv(media: try singleContainer.decode(TMDBTV.self))
         }
-        
-        public init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            let singleContainer = try decoder.singleValueContainer()
-            mediaType = try container.decode(MediaType.self, forKey: .mediaType)
-            
-            switch mediaType {
-            case .movie:
-                media = .movie(media: try singleContainer.decode(TMDBMovie.self))
-            case .tv:
-                media = .tv(media: try singleContainer.decode(TMDBTV.self))
-            }
-        }
-        
-        public enum CodingKeys: String, CodingKey {
-            case mediaType = "media_type"
-        }
-        
-        public enum MediaType: String, Codable {
-            case movie, tv
-        }
+    }
+    
+    public enum CodingKeys: String, CodingKey {
+        case mediaType = "media_type"
     }
 }
 
+public enum TMDBListItemMedia {
+    case tv(media: TMDBTV)
+    case movie(media: TMDBMovie)
+}
+
+public enum TMDBListItemMediaType: String, Codable {
+    case movie, tv
+}

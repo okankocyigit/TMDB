@@ -1,5 +1,5 @@
 public struct TMDBTranslations<T: Codable>: Codable {
-    public let id: Int
+    public let id: Int?
     public let translations: [TMDBTranslation<T>]
 }
 

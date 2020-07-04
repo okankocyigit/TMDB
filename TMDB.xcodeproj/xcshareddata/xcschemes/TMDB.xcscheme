@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "543DAC04242F868600B03DFC"
+               BlueprintIdentifier = "54D5825E24B0D1A40089DE54"
                BuildableName = "TMDBTests.xctest"
                BlueprintName = "TMDBTests"
                ReferencedContainer = "container:TMDB.xcodeproj">

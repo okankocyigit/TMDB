@@ -4,11 +4,11 @@ public struct TMDBCredit: Decodable {
     public let person: TMDBPerson
     
     public let media: TMDBCreditMedia?
-    public let mediaType: MediaType
+    public let mediaType: TMDBCreditMediaType
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        mediaType = try container.decode(MediaType.self, forKey: .mediaType)
+        mediaType = try container.decode(TMDBCreditMediaType.self, forKey: .mediaType)
         creditType = try container.decode(String.self, forKey: .creditType)
         department = try container.decode(String.self, forKey: .department)
         job = try container.decode(String.self, forKey: .job)
@@ -29,13 +29,13 @@ public struct TMDBCredit: Decodable {
         case mediaType = "media_type"
         case id, person
     }
-    
-    public enum TMDBCreditMedia {
-        case movie(movie: TMDBMovie)
-        case tv(tv: TMDBTV)
-    }
-    
-    public enum MediaType: String, Codable {
-        case movie, tv
-    }
+}
+
+public enum TMDBCreditMedia {
+    case movie(movie: TMDBMovie)
+    case tv(tv: TMDBTV)
+}
+
+public enum TMDBCreditMediaType: String, Codable {
+    case movie, tv
 }

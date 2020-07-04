@@ -1,17 +1,11 @@
 public struct TMDBSearchResult: Codable {
     public let media: TMDBSearchResultMedia
-    public let mediaType: MediaType
-    
-    public enum TMDBSearchResultMedia {
-        case tv(media: TMDBTV)
-        case movie(media: TMDBMovie)
-        case person(media: TMDBPerson)
-    }
+    public let mediaType: TMDBSearchResultMediaType
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let singleContainer = try decoder.singleValueContainer()
-        mediaType = try container.decode(MediaType.self, forKey: .mediaType)
+        mediaType = try container.decode(TMDBSearchResultMediaType.self, forKey: .mediaType)
         
         switch mediaType {
         case .movie:
@@ -26,8 +20,14 @@ public struct TMDBSearchResult: Codable {
     public enum CodingKeys: String, CodingKey {
         case mediaType = "media_type"
     }
-    
-    public enum MediaType: String, Codable {
-        case movie, tv, person
-    }
+}
+
+public enum TMDBSearchResultMedia {
+    case tv(media: TMDBTV)
+    case movie(media: TMDBMovie)
+    case person(media: TMDBPerson)
+}
+
+public enum TMDBSearchResultMediaType: String, Codable {
+    case movie, tv, person
 }

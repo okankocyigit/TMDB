@@ -62,7 +62,7 @@ extension TMDB {
         case clearList(sessionId: String, listId: String)
         case deleteList(sessionId: String, listId: String)
         
-        case getMovieDetail(id: Int)
+        case getMovieDetail(id: Int, appendToResponse: [TMDBMovieDetailExtraResponses], includeImageLanguage: String?, page: Int)
         case getMovieAlternativeTitles(id: Int, country: String?)
         case getMovieChanges(id: Int, startDate: Date?, endDate: Date?)
         case getMovieCredits(id: Int)
@@ -349,8 +349,8 @@ extension TMDB {
             case .deleteList(let params):
                 return "list/\(params.listId)"
                 
-            case .getMovieDetail(let id):
-                return "movie/\(id)"
+            case .getMovieDetail(let params):
+                return "movie/\(params.id)"
             case .getMovieAlternativeTitles(let params):
                 return "movie/\(params.id)/alternative_titles"
             case .getMovieChanges(let params):
@@ -660,7 +660,17 @@ extension TMDB {
                 _parameters[Constants.Parameters.confirm] = true
             case .deleteList(let params):
                 _parameters[Constants.Parameters.sessionId] = params.sessionId
+            case .getMovieDetail(let params):
+                if params.appendToResponse.count > 0 {
+                    _parameters[Constants.Parameters.appendToResponse] = params.appendToResponse.map({"\($0.rawValue)"}).joined(separator: ",")
+                }
+                var imageLanguage = "null"
+                if let includeImageLanguage = params.includeImageLanguage {
+                    imageLanguage = "\(includeImageLanguage),\(imageLanguage)"
+                }
+                _parameters[Constants.Parameters.includeImageLanguage] = imageLanguage
                 
+                _parameters[Constants.Parameters.page] = params.page
             case .getMovieAlternativeTitles(let params):
                 if let country = params.country {
                     _parameters[Constants.Parameters.country] = country
