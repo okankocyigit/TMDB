@@ -17,24 +17,24 @@ public enum TMDBMovieDetailExtraResponses: String {
 
 public struct TMDBMovieDetail: Codable {
     public let adult: Bool
-    public let backdropPath: String
-    public let belongsToCollection: TMDBCollection
+    public let backdropPath: String?
+    public let belongsToCollection: TMDBCollection?
     public let budget: Int
-    public let genres: [TMDBGenre]
+    public let genres: [TMDBGenre]?
     public let homepage: String
     public let id: Int
     public let imdbID, originalLanguage, originalTitle, overview: String
-    public let popularity: Double
-    public let posterPath: String
-    public let productionCompanies: [TMDBCompany]
-    public let productionCountries: [TMDBCountry]
-    public let releaseDate: String
-    public let revenue, runtime: Int
+    public let popularity: Double?
+    public let posterPath: String?
+    public let productionCompanies: [TMDBCompany]?
+    public let productionCountries: [TMDBCountry]?
+    public let releaseDate: String?
+    public let revenue, runtime: Int?
     public let spokenLanguages: [TMDBLanguage]
     public let status, tagline, title: String
     public let video: Bool
-    public let voteAverage: Double
-    public let voteCount: Int
+    public let voteAverage: Double?
+    public let voteCount: Int?
     public let videos: TMDBListResult<TMDBVideo>?
     public let images: TMDBImages?
     public let keywords: TMDBKeywords?
