@@ -1,5 +1,5 @@
 public struct TMDBReleaseDates: Codable {
-    public let iso3166_1: String
+    public let iso3166_1: String?
     public let releaseDates: [TMDBReleaseDate]
 
     public enum CodingKeys: String, CodingKey {
@@ -10,7 +10,7 @@ public struct TMDBReleaseDates: Codable {
 
 public struct TMDBReleaseDate: Codable {
     public let certification: String?
-    public let iso639_1: String
+    public let iso639_1: String?
     public let note: String?
     public let releaseDate: String
     public let type: TMDBReleaseType

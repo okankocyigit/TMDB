@@ -1,5 +1,3 @@
-import Foundation
-
 public enum TMDBMovieDetailExtraResponses: String {
     case alternativeTitles = "alternative_titles"
     case credits

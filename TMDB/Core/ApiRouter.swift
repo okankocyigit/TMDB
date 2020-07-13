@@ -112,7 +112,7 @@ extension TMDB {
         case searchPeople(query: String, includeAdult: Bool?, region: String?, page: Int)
         case searchTV(query: String, includeAdult: Bool?, firstAirDateYear: Int?, page: Int)
         
-        case getTVDetail(id: Int)
+        case getTVDetail(id: Int, appendToResponse: [TMDBTVDetailExtraResponses], includeImageLanguage: String?, page: Int)
         case getTVAccountStates(id: Int, sessionId: String? = nil, guestSessionId: String? = nil)
         case getTVAlternativeTitles(id: Int)
         case getTVChanges(id: Int, page: Int = 1, startDate: Date? = nil, endDate: Date? = nil)
@@ -442,8 +442,8 @@ extension TMDB {
             case .searchTV:
                 return "search/tv"
                 
-            case .getTVDetail(let id):
-                return "tv/\(id)"
+            case .getTVDetail(let params):
+                return "tv/\(params.id)"
             case .getTVAccountStates(let params):
                 return "tv/\(params.id)/account_states"
             case .getTVAlternativeTitles(let id):
@@ -782,6 +782,17 @@ extension TMDB {
                 if let firstAirDateYear = params.firstAirDateYear {
                     _parameters[Constants.Parameters.firstAirDateYear] = firstAirDateYear
                 }
+            case .getTVDetail(let params):
+                if params.appendToResponse.count > 0 {
+                    _parameters[Constants.Parameters.appendToResponse] = params.appendToResponse.map({"\($0.rawValue)"}).joined(separator: ",")
+                }
+                var imageLanguage = "null"
+                if let includeImageLanguage = params.includeImageLanguage {
+                    imageLanguage = "\(includeImageLanguage),\(imageLanguage)"
+                }
+                _parameters[Constants.Parameters.includeImageLanguage] = imageLanguage
+                
+                _parameters[Constants.Parameters.page] = params.page
             case .getTVChanges(let params):
                 _parameters[Constants.Parameters.page] = params.page
                 _parameters[Constants.Parameters.startDate] = params.startDate

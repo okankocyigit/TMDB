@@ -1,7 +1,7 @@
 extension TMDB {
     public class TV {
-        public class func get(id: Int, completion: @escaping (Result<TMDBTVDetail, Error>) -> Void) -> URLSessionTask? {
-            return request(with: .getTVDetail(id: id), completion: completion)
+        public class func get(id: Int, appendToResponse: [TMDBTVDetailExtraResponses] = [], includeImageLanguage: String? = nil, page: Int = 1, completion: @escaping (Result<TMDBTVDetail, Error>) -> Void) -> URLSessionTask? {
+            return request(with: .getTVDetail(id: id, appendToResponse: appendToResponse, includeImageLanguage: includeImageLanguage, page: page), completion: completion)
         }
         
         public class func getAccountStates(id: Int, sessionId: String? = nil, guestSessionId: String? = nil, completion: @escaping (Result<TMDBTVAccountStates, Error>) -> Void) -> URLSessionTask? {

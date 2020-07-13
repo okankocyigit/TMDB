@@ -1,7 +1,7 @@
 public struct TMDBTVCredits: Codable {
     public let cast: [TMDBTVCast]
     public let crew: [TMDBTVCrew]
-    public let id: Int
+    public let id: Int?
 }
 
 public struct TMDBTVCast: Codable {

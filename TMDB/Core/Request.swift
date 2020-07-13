@@ -39,7 +39,6 @@ extension TMDB {
             
             do {
                 let decodedObject = try JSONDecoder().decode(T.self, from: data)
-                print(decodedObject)
                 completion(.success(decodedObject))
             } catch let decodeError {
                 do {

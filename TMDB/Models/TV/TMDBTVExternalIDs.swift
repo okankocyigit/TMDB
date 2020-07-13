@@ -1,5 +1,5 @@
 public struct TMDBTVExternalIDs: Codable {
-    public let id: Int
+    public let id: Int?
     public let imdbID, freebaseMid, freebaseID: String?
     public let tvdbID, tvrageID: Int?
     public let facebookID, instagramID, twitterID: String?

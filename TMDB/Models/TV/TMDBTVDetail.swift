@@ -1,3 +1,12 @@
+public enum TMDBTVDetailExtraResponses: String {
+    case alternativeTitles = "alternative_titles"
+    case contentRatings = "content_ratings"
+    case credits, images, keywords, recommendations, reviews, similar, translations, videos
+    case episodeGroups = "episode_groups"
+    case externalIDs = "external_ids"
+    case screenedTheatrically = "screened_theatrically"
+}
+
 public struct TMDBTVDetail: Codable {
     public let backdropPath: String?
     public let createdBy: [TMDBCreatedBy]
@@ -23,6 +32,20 @@ public struct TMDBTVDetail: Codable {
     public let status, type: String
     public let voteAverage: Double
     public let voteCount: Int
+    
+    public let alternativeTitles: TMDBListResult<TMDBAlternativeTitle>?
+    public let contentRatings: TMDBListResult<TMDBTVContentRating>?
+    public let credits: TMDBTVCredits?
+    public let episodeGroups: TMDBListResult<TMDBTVEpisodeGroups>?
+    public let externalIDs: TMDBTVExternalIDs?
+    public let images: TMDBImages?
+    public let keywords: TMDBListResult<TMDBKeyword>?
+    public let recommendations: TMDBPagedListResult<TMDBTV>?
+    public let reviews: TMDBPagedListResult<TMDBReview>?
+    public let screenedTheatrically: TMDBListResult<TMDBTVScreenedTheatrically>?
+    public let similar: TMDBPagedListResult<TMDBTV>?
+    public let translations: TMDBTranslations<TMDBTVTranslationData>?
+    public let videos: TMDBListResult<TMDBVideo>?
 
     public enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -48,6 +71,12 @@ public struct TMDBTVDetail: Codable {
         case seasons, status, type
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+        case alternativeTitles = "alternative_titles"
+        case contentRatings = "content_ratings"
+        case credits, images, keywords, recommendations, reviews, similar, translations, videos
+        case episodeGroups = "episode_groups"
+        case externalIDs = "external_ids"
+        case screenedTheatrically = "screened_theatrically"
     }
 }
 
