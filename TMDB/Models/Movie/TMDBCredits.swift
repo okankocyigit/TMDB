@@ -5,9 +5,10 @@ public struct TMDBCredits: Codable {
 }
 
 public struct TMDBCast: Codable {
-    public let castID: Int
-    public let character, creditID: String
-    public let gender, id: Int
+    public let castID: Int?
+    public let character, creditID: String?
+    public let gender: Int?
+    public let id: Int
     public let name: String
     public let order: Int
     public let profilePath: String?

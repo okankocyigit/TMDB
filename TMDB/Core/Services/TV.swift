@@ -16,7 +16,7 @@ extension TMDB {
             return request(with: .getTVContentRatings(id: id), completion: completion)
         }
         
-        public class func getCredits(id: Int, completion: @escaping (Result<TMDBTVCredits, Error>) -> Void) -> URLSessionTask? {
+        public class func getCredits(id: Int, completion: @escaping (Result<TMDBCredits, Error>) -> Void) -> URLSessionTask? {
             return request(with: .getTVCredits(id: id), completion: completion)
         }
         

@@ -35,7 +35,7 @@ public struct TMDBTVDetail: Codable {
     
     public let alternativeTitles: TMDBListResult<TMDBAlternativeTitle>?
     public let contentRatings: TMDBListResult<TMDBTVContentRating>?
-    public let credits: TMDBTVCredits?
+    public let credits: TMDBCredits?
     public let episodeGroups: TMDBListResult<TMDBTVEpisodeGroups>?
     public let externalIDs: TMDBTVExternalIDs?
     public let images: TMDBImages?

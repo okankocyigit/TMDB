@@ -1,7 +1,7 @@
 public struct TMDBTVEpisodeCredits: Codable {
-    public let cast: [TMDBTVCast]
-    public let crew: [TMDBTVCrew]
-    public let guestStars: [TMDBTVGuestStar]
+    public let cast: [TMDBCast]
+    public let crew: [TMDBCrew]
+    public let guestStars: [TMDBCast]
     public let id: Int
     
     public enum CodingKeys: String, CodingKey {

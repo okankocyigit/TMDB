@@ -96,7 +96,6 @@
 		54D3029D2440B31100C722B3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3029C2440B31100C722B3 /* SearchResult.swift */; };
 		54D3029F2440DA6900C722B3 /* TMDBTVDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3029E2440DA6900C722B3 /* TMDBTVDetail.swift */; };
 		54D302A12441119700C722B3 /* TMDBTVContentRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D302A02441119700C722B3 /* TMDBTVContentRating.swift */; };
-		54D302A32441187400C722B3 /* TMDBTVCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D302A22441187400C722B3 /* TMDBTVCredits.swift */; };
 		54D302A524411A7C00C722B3 /* TMDBTVEpisodeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D302A424411A7C00C722B3 /* TMDBTVEpisodeGroup.swift */; };
 		54D302A724411B4800C722B3 /* TMDBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D302A624411B4800C722B3 /* TMDBNetwork.swift */; };
 		54D302A92441214800C722B3 /* TMDBTVExternalIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D302A82441214800C722B3 /* TMDBTVExternalIDs.swift */; };
@@ -158,7 +157,6 @@
 		54666B5124474AD600E138B8 /* TMDBChangesDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBChangesDataType.swift; sourceTree = "<group>"; };
 		54666B5324474B0000E138B8 /* TMDBDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBDataType.swift; sourceTree = "<group>"; };
 		54666B5524474B4700E138B8 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
-		547212DD24B1E623006CE081 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5495F1C32433D309005682B7 /* TMDBCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBCollection.swift; sourceTree = "<group>"; };
 		5495F1C52433D83F005682B7 /* TMDBImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBImage.swift; sourceTree = "<group>"; };
 		5495F1C72433D857005682B7 /* TMDBImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBImages.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 		54D3029C2440B31100C722B3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		54D3029E2440DA6900C722B3 /* TMDBTVDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVDetail.swift; sourceTree = "<group>"; };
 		54D302A02441119700C722B3 /* TMDBTVContentRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVContentRating.swift; sourceTree = "<group>"; };
-		54D302A22441187400C722B3 /* TMDBTVCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVCredits.swift; sourceTree = "<group>"; };
 		54D302A424411A7C00C722B3 /* TMDBTVEpisodeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVEpisodeGroup.swift; sourceTree = "<group>"; };
 		54D302A624411B4800C722B3 /* TMDBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBNetwork.swift; sourceTree = "<group>"; };
 		54D302A82441214800C722B3 /* TMDBTVExternalIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVExternalIDs.swift; sourceTree = "<group>"; };
@@ -249,13 +246,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		543DABF9242F868600B03DFC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		547212DA24B1E623006CE081 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				543DABFC242F868600B03DFC /* TMDB.framework */,
-				547212DD24B1E623006CE081 /* test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -554,7 +543,6 @@
 				54E6C00A2435FE69002642C1 /* TMDBTVEpisode.swift */,
 				54D3029E2440DA6900C722B3 /* TMDBTVDetail.swift */,
 				54D302A02441119700C722B3 /* TMDBTVContentRating.swift */,
-				54D302A22441187400C722B3 /* TMDBTVCredits.swift */,
 				54D302A424411A7C00C722B3 /* TMDBTVEpisodeGroup.swift */,
 				54D302A82441214800C722B3 /* TMDBTVExternalIDs.swift */,
 				54D302AA244127DE00C722B3 /* TMDBTVScreenedTheatrically.swift */,
@@ -654,23 +642,6 @@
 			productReference = 543DABFC242F868600B03DFC /* TMDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		547212DC24B1E623006CE081 /* test */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 547212F024B1E626006CE081 /* Build configuration list for PBXNativeTarget "test" */;
-			buildPhases = (
-				547212D924B1E623006CE081 /* Sources */,
-				547212DA24B1E623006CE081 /* Frameworks */,
-				547212DB24B1E623006CE081 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = test;
-			productName = test;
-			productReference = 547212DD24B1E623006CE081 /* test.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -684,9 +655,6 @@
 					543DABFB242F868600B03DFC = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
-					};
-					547212DC24B1E623006CE081 = {
-						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -704,20 +672,12 @@
 			projectRoot = "";
 			targets = (
 				543DABFB242F868600B03DFC /* TMDB */,
-				547212DC24B1E623006CE081 /* test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		543DABFA242F868600B03DFC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		547212DB24B1E623006CE081 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -805,7 +765,6 @@
 				54D3028B243CB44C00C722B3 /* TMDBPersonTVCredits.swift in Sources */,
 				54CF020E2433DDC2003E58D0 /* TMDBCompany.swift in Sources */,
 				54D3028F243F38D900C722B3 /* TMDBPersonExternalIDs.swift in Sources */,
-				54D302A32441187400C722B3 /* TMDBTVCredits.swift in Sources */,
 				54B6D95924434F8D0079D457 /* TMDBListItemStatus.swift in Sources */,
 				54D30291243F398600C722B3 /* TMDBPersonImages.swift in Sources */,
 				549EA39524354604002ED22F /* TMDBDiscoverTVParameters.swift in Sources */,
@@ -846,13 +805,6 @@
 				54B6D974244504C00079D457 /* Collections.swift in Sources */,
 				54CF021B2433EEC6003E58D0 /* TMDBLanguage.swift in Sources */,
 				5495F1C42433D309005682B7 /* TMDBCollection.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		547212D924B1E623006CE081 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,42 +984,6 @@
 			};
 			name = Release;
 		};
-		547212EE24B1E626006CE081 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6EVRFDD494;
-				INFOPLIST_FILE = test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.okan.test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		547212EF24B1E626006CE081 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6EVRFDD494;
-				INFOPLIST_FILE = test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.okan.test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1085,15 +1001,6 @@
 			buildConfigurations = (
 				543DAC11242F868600B03DFC /* Debug */,
 				543DAC12242F868600B03DFC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		547212F024B1E626006CE081 /* Build configuration list for PBXNativeTarget "test" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				547212EE24B1E626006CE081 /* Debug */,
-				547212EF24B1E626006CE081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

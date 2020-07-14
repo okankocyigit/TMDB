@@ -8,7 +8,7 @@ extension TMDB {
             return request(with: .getTVSeasonAccountStates(id: id, seasonNumber: seasonNumber, sessionId: sessionId, guestSessionId: guestSessionId), completion: completion)
         }
         
-        public class func getCredits(id: Int, seasonNumber: Int, completion: @escaping (Result<TMDBTVCredits, Error>) -> Void) -> URLSessionTask? {
+        public class func getCredits(id: Int, seasonNumber: Int, completion: @escaping (Result<TMDBCredits, Error>) -> Void) -> URLSessionTask? {
             return request(with: .getTVSeasonCredits(id: id, seasonNumber: seasonNumber), completion: completion)
         }
         
