@@ -13,8 +13,29 @@ public struct TMDBPersonTVCreditsCast: Codable {
     public let voteCount: Int
     public let voteAverage, popularity: Double
     public let episodeCount: Int
-    public let originalLanguage, firstAirDate, backdropPath, overview: String
+    public let originalLanguage, firstAirDate, overview: String
+    public let backdropPath: String?
     public let originCountry: [String]
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(Int.self, forKey: .id)
+        originalLanguage = try values.decode(String.self, forKey: .originalLanguage)
+        episodeCount = try values.decode(Int.self, forKey: .episodeCount)
+        overview = try values.decode(String.self, forKey: .overview)
+        originCountry = try values.decode([String].self, forKey: .originCountry)
+        originalName = try values.decode(String.self, forKey: .originalName)
+        genreIDS = try values.decode([Int].self, forKey: .genreIDS)
+        name = try values.decode(String.self, forKey: .name)
+        firstAirDate = try values.decode(String.self, forKey: .firstAirDate)
+        backdropPath = try values.decodeIfPresent(String.self, forKey: .backdropPath)
+        popularity = try values.decode(Double.self, forKey: .popularity)
+        voteCount = try values.decode(Int.self, forKey: .voteCount)
+        voteAverage = try values.decode(Double.self, forKey: .voteAverage)
+        posterPath = try values.decodeIfPresent(String.self, forKey: .posterPath)
+        creditID = try values.decode(String.self, forKey: .creditID)
+        character = try values.decode(String.self, forKey: .character)
+        }
 
     public enum CodingKeys: String, CodingKey {
         case creditID = "credit_id"
@@ -43,12 +64,34 @@ public struct TMDBPersonTVCreditsCrew: Codable {
     public let originCountry: [String]
     public let originalName: String
     public let genreIDS: [Int]
-    public let name, firstAirDate, backdropPath: String
+    public let name, firstAirDate: String
+    public let backdropPath: String?
     public let popularity: Double
     public let voteCount: Int
     public let voteAverage: Double
     public let posterPath: String?
     public let creditID: String
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(Int.self, forKey: .id)
+        department = try values.decode(String.self, forKey: .department)
+        originalLanguage = try values.decode(String.self, forKey: .originalLanguage)
+        episodeCount = try values.decode(Int.self, forKey: .episodeCount)
+        job = try values.decode(String.self, forKey: .job)
+        overview = try values.decode(String.self, forKey: .overview)
+        originCountry = try values.decode([String].self, forKey: .originCountry)
+        originalName = try values.decode(String.self, forKey: .originalName)
+        genreIDS = try values.decode([Int].self, forKey: .genreIDS)
+        name = try values.decode(String.self, forKey: .name)
+        firstAirDate = try values.decode(String.self, forKey: .firstAirDate)
+        backdropPath = try values.decodeIfPresent(String.self, forKey: .backdropPath)
+        popularity = try values.decode(Double.self, forKey: .popularity)
+        voteCount = try values.decode(Int.self, forKey: .voteCount)
+        voteAverage = try values.decode(Double.self, forKey: .voteAverage)
+        posterPath = try values.decodeIfPresent(String.self, forKey: .posterPath)
+        creditID = try values.decode(String.self, forKey: .creditID)
+    }
 
     public enum CodingKeys: String, CodingKey {
         case id, department
