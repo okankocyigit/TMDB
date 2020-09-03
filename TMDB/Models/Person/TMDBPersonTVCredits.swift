@@ -35,7 +35,7 @@ public struct TMDBPersonTVCreditsCast: Codable {
         posterPath = try values.decodeIfPresent(String.self, forKey: .posterPath)
         creditID = try values.decode(String.self, forKey: .creditID)
         character = try values.decode(String.self, forKey: .character)
-        }
+    }
 
     public enum CodingKeys: String, CodingKey {
         case creditID = "credit_id"
