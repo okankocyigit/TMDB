@@ -12,7 +12,7 @@ public struct TMDBPersonTVCreditsCast: Codable {
     public let posterPath: String?
     public let voteCount: Int
     public let voteAverage, popularity: Double
-    public let episodeCount: Int
+    public let episodeCount: Int?
     public let originalLanguage, firstAirDate, overview: String
     public let backdropPath: String?
     public let originCountry: [String]
@@ -59,7 +59,7 @@ public struct TMDBPersonTVCreditsCast: Codable {
 public struct TMDBPersonTVCreditsCrew: Codable {
     public let id: Int
     public let department, originalLanguage: String
-    public let episodeCount: Int
+    public let episodeCount: Int?
     public let job, overview: String
     public let originCountry: [String]
     public let originalName: String
